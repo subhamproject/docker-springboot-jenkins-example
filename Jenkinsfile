@@ -25,6 +25,13 @@ pipeline
 	git poll: true,url: 'https://github.com/subhamproject/docker-springboot-jenkins-example.git'
 	}
 	}
+	stage ('Maven Build') 
+	{
+	steps 
+	{
+	sh "mvn package"
+	}
+	}
 	// Build Docker image
      stage('Build Docker Image')
         {
